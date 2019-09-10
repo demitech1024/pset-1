@@ -1,3 +1,6 @@
+// import org.graalvm.compiler.core.common.type.ArithmeticOpTable.UnaryOp.Sqrt;
+import java.lang.Math;
+
 /**
  * Problem Set 1.
  * 
@@ -15,14 +18,16 @@
 public class ProblemSet1 {
     
     public static void main(String[] args) {
-        
+        double inchToCentimeter = 2.54;
         /*
          * Exercise 1.
          * 
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
         
-        
+        double sheetAreaMillimeter = (8.5 * inchToCentimeter * 10) * (11 * inchToCentimeter * 10);
+        System.out.printf("The area (in square millimeters) of an 8.5-by-11-inch sheet of paper is %.2f millimeters squared.", sheetAreaMillimeter);
+
         
         /*
          * Exercise 2.
@@ -30,8 +35,9 @@ public class ProblemSet1 {
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
         
-        
-        
+        double sheetPerimiter = (8.5 * 2 * inchToCentimeter) + (11 * 2 * inchToCentimeter);
+        System.out.printf("The perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper is %.2fcm.\n", sheetPerimiter);
+;        
         /*
          * Exercise 3.
          * 
@@ -39,7 +45,8 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
         
-        
+        double diagonalLength = Math.sqrt((Math.pow(8.5, 2) + Math.pow(11, 2)));
+        System.out.printf("The length of the diagonal (in inches) between two corners on an 8.5-by-11-inch sheet of paper is %.2f inches.\n", diagonalLength);
 
         /*
          * Exercise 4.
@@ -48,6 +55,9 @@ public class ProblemSet1 {
          * what marking period grade will I get?
          */
         
+        double quizPercent = 0.35;
+        double testPercent = 0.50;
+        double homeworkPercent = 0.15;
         int homework1 = 88;
         int homework2 = 91;
         int homework3 = 0;
@@ -57,7 +67,9 @@ public class ProblemSet1 {
         int test1 = 74;
         int test2 = 87;
         int test3 = 82;
-        
+
+        double finalGrade = (testPercent * ((test1 + test2 + test3) / 3)) + (quizPercent * ((quiz1 + quiz2 + quiz3) / 3)) + (homeworkPercent * ((homework1 + homework2 + homework3) / 3));
+        System.out.printf("Your marking period grade is : %.2f%%\n", finalGrade);
         
         
         /*
