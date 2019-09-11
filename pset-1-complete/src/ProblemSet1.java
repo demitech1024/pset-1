@@ -1,5 +1,9 @@
 // import org.graalvm.compiler.core.common.type.ArithmeticOpTable.UnaryOp.Sqrt;
 import java.lang.Math;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 /**
  * Problem Set 1.
@@ -25,8 +29,12 @@ public class ProblemSet1 {
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
         
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
         double sheetAreaMillimeter = (8.5 * inchToCentimeter * 10) * (11 * inchToCentimeter * 10);
-        System.out.printf("The area (in square millimeters) of an 8.5-by-11-inch sheet of paper is %.2f millimeters squared.\n", sheetAreaMillimeter);
+        sheetAreaMillimeter = Double.parseDouble(decimalFormat.format(sheetAreaMillimeter));
+        String stringAreaMillimeter = numberFormat.format(sheetAreaMillimeter);
+        System.out.printf("\n%S square millimeters.\n", stringAreaMillimeter);
 
         
         /*
@@ -36,7 +44,7 @@ public class ProblemSet1 {
          */
         
         double sheetPerimiter = (8.5 * 2 * inchToCentimeter) + (11 * 2 * inchToCentimeter);
-        System.out.printf("The perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper is %.2fcm.\n", sheetPerimiter);
+        System.out.printf("\n%.2f centimeters.\n", sheetPerimiter);
 ;        
         /*
          * Exercise 3.
@@ -46,7 +54,7 @@ public class ProblemSet1 {
          */
         
         double diagonalLength = Math.sqrt((Math.pow(8.5, 2) + Math.pow(11, 2)));
-        System.out.printf("The length of the diagonal (in inches) between two corners on an 8.5-by-11-inch sheet of paper is %.2f inches.\n", diagonalLength);
+        System.out.printf("\n%.2f inches.\n", diagonalLength);
 
         /*
          * Exercise 4.
@@ -69,7 +77,7 @@ public class ProblemSet1 {
         int test3 = 82;
 
         double finalGrade = (testPercent * ((test1 + test2 + test3) / 3)) + (quizPercent * ((quiz1 + quiz2 + quiz3) / 3)) + (homeworkPercent * ((homework1 + homework2 + homework3) / 3));
-        System.out.printf("Your marking period grade is : %.2f%%\n", finalGrade);
+        System.out.printf("\n%.2f%%\n", finalGrade);
         
         
         /*
@@ -81,7 +89,7 @@ public class ProblemSet1 {
 
         double totalHours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5;
         double moneyMade = totalHours * 12.5;
-        System.out.printf("You worked a total of %.0f hours this week and earned $%.2f.\n", totalHours, moneyMade);
+        System.out.printf("\n$%.2f.\n", moneyMade);
         
         /*
          * Exercise 6.
@@ -89,7 +97,14 @@ public class ProblemSet1 {
          * What is my take-home pay each check?
          */
         
-        
+        double fedIncomeTax = 0.24;
+        double stateIncomeTax = 0.0637;
+        double fourZeroOneKContrTax = 0.07;
+        double salary = 117000.00;
+        double fullPaycheck = salary / 24;
+        double payCheck = Double.parseDouble(decimalFormat.format(fullPaycheck * (1 - (fedIncomeTax + stateIncomeTax + fourZeroOneKContrTax))));
+        System.out.printf("\n$%S.\n", (numberFormat.format(payCheck)));
+
         
         /*
          * Exercise 7.
