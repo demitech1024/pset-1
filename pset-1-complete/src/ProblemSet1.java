@@ -79,7 +79,9 @@ public class ProblemSet1 {
          * will I make this week?
          */
 
-        
+        double totalHours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5;
+        double moneyMade = totalHours * 12.5;
+        System.out.printf("You worked a total of %.0f hours this week and earned $%.2f.\n", totalHours, moneyMade);
         
         /*
          * Exercise 6.
