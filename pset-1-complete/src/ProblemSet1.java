@@ -113,8 +113,13 @@ public class ProblemSet1 {
          * people will be on the last bus?
          */
         
-        
-        
+        int numStudents = 273;
+        int numTeachers = 28;
+        double busCapacity = 54;
+        int bussesFilled = (int) Math.ceil((numStudents + numTeachers) / busCapacity);
+        int leftOver = (int) ((numStudents + numTeachers) % busCapacity);
+        System.out.printf("\n%d buses are needed, with %d passengers on the last bus.\n", bussesFilled, leftOver);
+
         /*
          * Exercise 8.
          * 
