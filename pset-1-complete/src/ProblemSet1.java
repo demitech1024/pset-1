@@ -26,7 +26,7 @@ public class ProblemSet1 {
          */
         
         double sheetAreaMillimeter = (8.5 * inchToCentimeter * 10) * (11 * inchToCentimeter * 10);
-        System.out.printf("The area (in square millimeters) of an 8.5-by-11-inch sheet of paper is %.2f millimeters squared.", sheetAreaMillimeter);
+        System.out.printf("The area (in square millimeters) of an 8.5-by-11-inch sheet of paper is %.2f millimeters squared.\n", sheetAreaMillimeter);
 
         
         /*
