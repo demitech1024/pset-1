@@ -35,7 +35,7 @@ public class ProblemSet1 {
         double sheetAreaMillimeter = (width * inchToMillimeter) * (length * inchToMillimeter);
         sheetAreaMillimeter = Double.parseDouble(decimalFormat.format(sheetAreaMillimeter));
         String stringAreaMillimeter = numberFormat.format(sheetAreaMillimeter);
-        System.out.printf("\n%S square millimeters.\n\n", stringAreaMillimeter);
+        System.out.printf("\n%S square millimeters.\n", stringAreaMillimeter);
 
         
         /*
@@ -46,7 +46,7 @@ public class ProblemSet1 {
         
         double inchToCentimeter = inchToMillimeter / 10;
         double sheetPerimiter = (width * 2 * inchToCentimeter) + (length * 2 * inchToCentimeter);
-        System.out.printf("\n%.2f centimeters.\n\n", sheetPerimiter);
+        System.out.printf("\n%.2f centimeters.\n", sheetPerimiter);
 ;       
         /*
          * Exercise 3.
@@ -56,7 +56,7 @@ public class ProblemSet1 {
          */
         
         double diagonalLength = Math.sqrt((Math.pow(width, 2) + Math.pow(length, 2)));
-        System.out.printf("\n%.2f inches.\n\n", diagonalLength);
+        System.out.printf("\n%.2f inches.\n", diagonalLength);
 
         /*
          * Exercise 4.
@@ -82,7 +82,7 @@ public class ProblemSet1 {
         double homeworkContrib = (homeworkPercent * (((double) (homework1 + homework2 + homework3)) / 3));
 
         double finalGrade = testContrib + quizContrib + homeworkContrib;
-        System.out.printf("\n%.2f%%.\n\n", finalGrade);
+        System.out.printf("\n%.2f%%.\n", finalGrade);
         
         
         /*
@@ -95,7 +95,7 @@ public class ProblemSet1 {
         final double hourlyWage = 12.50;
         double totalHours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5;
         double moneyMade = totalHours * hourlyWage;
-        System.out.printf("\n$%.2f.\n\n", moneyMade);
+        System.out.printf("\n$%.2f.\n", moneyMade);
         
         /*
          * Exercise 6.
@@ -109,7 +109,7 @@ public class ProblemSet1 {
         final double salary = 117000.00;
         double fullPaycheck = salary / 24;
         double payCheck = Double.parseDouble(decimalFormat.format(fullPaycheck * (1 - (fedIncomeTax + stateIncomeTax + fourZeroOneKContrTax))));
-        System.out.printf("\n$%S.\n\n", (numberFormat.format(payCheck)));
+        System.out.printf("\n$%S.\n", (numberFormat.format(payCheck)));
 
         
         /*
@@ -124,7 +124,7 @@ public class ProblemSet1 {
         final int busCapacity = 54;
         int bussesFilled = (int) Math.ceil(((double) (numStudents + numTeachers)) / ((double) busCapacity));
         int leftOver = (int) (((double)(numStudents + numTeachers)) % ((double) busCapacity));
-        System.out.printf("\n%d buses are needed, with %d passengers on the last bus.\n\n", bussesFilled, leftOver);
+        System.out.printf("\n%d buses are needed, with %d passengers on the last bus.\n", bussesFilled, leftOver);
 
         /*
          * Exercise 8.
@@ -140,7 +140,7 @@ public class ProblemSet1 {
         double cornholeArea = rectangleArea - circleArea;
         cornholeArea = Double.parseDouble(decimalFormat.format(cornholeArea));
         String cornholeString = numberFormat.format(cornholeArea);
-        System.out.printf("\n%S square inches.\n\n", cornholeString);
+        System.out.printf("\n%S square inches.\n", cornholeString);
         
         /*
          * Exercise 9. 
@@ -155,9 +155,9 @@ public class ProblemSet1 {
         boolean oneHundredLeap = false;
         boolean fourHundredLeap = true;
         String twentyLeapString = String.valueOf(twentyLeap).toLowerCase();
-        String hundredLeapString = String.valueOf(oneHundredLeap).toLowerCase();
+        String oneHundredLeapString = String.valueOf(oneHundredLeap).toLowerCase();
         String fourHundredLeapString = String.valueOf(fourHundredLeap).toLowerCase();
-        System.out.printf("\n%d is a leap year...%S.\n%d is a leap year...%S.\n%d is a leap year...%S.\n\n", twenty, twentyLeapString, oneHundred, hundredLeapString, fourHundred, fourHundredLeapString);
+        System.out.printf("\n%d is a leap year..." + twentyLeap + ".\n%d is a leap year..." + oneHundredLeap + ".\n%d is a leap year..." + fourHundredLeap + ".\n", twenty, oneHundred, fourHundred);
     
         
         /*
