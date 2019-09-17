@@ -138,9 +138,7 @@ public class ProblemSet1 {
         double rectangleArea = length2 * width2;
         double circleArea = Math.PI * Math.pow(diameter / 2, 2);
         double cornholeArea = rectangleArea - circleArea;
-        cornholeArea = Double.parseDouble(decimalFormat.format(cornholeArea));
-        String cornholeString = numberFormat.format(cornholeArea);
-        System.out.printf("\n%S square inches.\n", cornholeString);
+        System.out.printf("\n%S square inches.\n", numberFormat.format(Double.parseDouble(decimalFormat.format(cornholeArea))));
         
         /*
          * Exercise 9. 
@@ -154,9 +152,6 @@ public class ProblemSet1 {
         boolean twentyLeap = true;
         boolean oneHundredLeap = false;
         boolean fourHundredLeap = true;
-        String twentyLeapString = String.valueOf(twentyLeap).toLowerCase();
-        String oneHundredLeapString = String.valueOf(oneHundredLeap).toLowerCase();
-        String fourHundredLeapString = String.valueOf(fourHundredLeap).toLowerCase();
         System.out.printf("\n%d is a leap year..." + twentyLeap + ".\n%d is a leap year..." + oneHundredLeap + ".\n%d is a leap year..." + fourHundredLeap + ".\n", twenty, oneHundred, fourHundred);
     
         
