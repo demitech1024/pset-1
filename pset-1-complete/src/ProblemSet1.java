@@ -108,8 +108,9 @@ public class ProblemSet1 {
         final double fourZeroOneKContrTax = 0.07;
         final double salary = 117000.00;
         double fullPaycheck = salary / 24;
-        double payCheck = Double.parseDouble(decimalFormat.format(fullPaycheck * (1 - (fedIncomeTax + stateIncomeTax + fourZeroOneKContrTax))));
-        System.out.printf("\n$%S.\n", (numberFormat.format(payCheck)));
+    
+        double payCheck = fullPaycheck * (1 - fourZeroOneKContrTax) * (1 - stateIncomeTax) * (1 - fedIncomeTax);
+        System.out.printf("\n$%,.2f.\n", payCheck);
 
         
         /*
