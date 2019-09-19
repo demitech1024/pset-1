@@ -1,8 +1,6 @@
 // import org.graalvm.compiler.core.common.type.ArithmeticOpTable.UnaryOp.Sqrt;
 import java.lang.Math;
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.text.DecimalFormat;
+//import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.And;
 
 /**
  * Problem Set 1.
@@ -30,12 +28,8 @@ public class ProblemSet1 {
         final double inchToMillimeter = 2.54 * 10;
         final double width = 8.5;
         final double length = 11;
-        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
-        DecimalFormat decimalFormat = new DecimalFormat("0.00");
         double sheetAreaMillimeter = (width * inchToMillimeter) * (length * inchToMillimeter);
-        sheetAreaMillimeter = Double.parseDouble(decimalFormat.format(sheetAreaMillimeter));
-        String stringAreaMillimeter = numberFormat.format(sheetAreaMillimeter);
-        System.out.printf("\n%S square millimeters.\n", stringAreaMillimeter);
+        System.out.printf("\n%,.2f square millimeters.\n", sheetAreaMillimeter);
 
         
         /*
@@ -46,7 +40,7 @@ public class ProblemSet1 {
         
         double inchToCentimeter = inchToMillimeter / 10;
         double sheetPerimiter = (width * 2 * inchToCentimeter) + (length * 2 * inchToCentimeter);
-        System.out.printf("\n%.2f centimeters.\n", sheetPerimiter);
+        System.out.printf("\n%,.2f centimeters.\n", sheetPerimiter);
 ;       
         /*
          * Exercise 3.
@@ -56,7 +50,7 @@ public class ProblemSet1 {
          */
         
         double diagonalLength = Math.sqrt((Math.pow(width, 2) + Math.pow(length, 2)));
-        System.out.printf("\n%.2f inches.\n", diagonalLength);
+        System.out.printf("\n%,.2f inches.\n", diagonalLength);
 
         /*
          * Exercise 4.
@@ -82,7 +76,7 @@ public class ProblemSet1 {
         double homeworkContrib = (homeworkPercent * (((double) (homework1 + homework2 + homework3)) / 3));
 
         double finalGrade = testContrib + quizContrib + homeworkContrib;
-        System.out.printf("\n%.2f%%.\n", finalGrade);
+        System.out.printf("\n%,.2f%%.\n", finalGrade);
         
         
         /*
@@ -95,7 +89,7 @@ public class ProblemSet1 {
         final double hourlyWage = 12.50;
         double totalHours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5;
         double moneyMade = totalHours * hourlyWage;
-        System.out.printf("\n$%.2f.\n", moneyMade);
+        System.out.printf("\n$%,.2f.\n", moneyMade);
         
         /*
          * Exercise 6.
@@ -139,7 +133,7 @@ public class ProblemSet1 {
         double rectangleArea = length2 * width2;
         double circleArea = Math.PI * Math.pow(diameter / 2, 2);
         double cornholeArea = rectangleArea - circleArea;
-        System.out.printf("\n%S square inches.\n", numberFormat.format(Double.parseDouble(decimalFormat.format(cornholeArea))));
+        System.out.printf("\n%,.2f square inches.\n", cornholeArea);
         
         /*
          * Exercise 9. 
@@ -150,9 +144,9 @@ public class ProblemSet1 {
         int twenty = 2020;
         int oneHundred = 2100;
         int fourHundred = 2400;
-        boolean twentyLeap = true;
-        boolean oneHundredLeap = false;
-        boolean fourHundredLeap = true;
+        boolean twentyLeap = ((twenty % 4 == 0 && twenty % 100 != 0) || twenty % 400 == 0);
+        boolean oneHundredLeap = ((oneHundred % 4 == 0 && oneHundred % 100 != 0) || oneHundred % 400 == 0);
+        boolean fourHundredLeap = ((fourHundred % 4 == 0 && fourHundred % 100 != 0) || fourHundred % 400 == 0);
         System.out.printf("\n%d is a leap year..." + twentyLeap + ".\n%d is a leap year..." + oneHundredLeap + ".\n%d is a leap year..." + fourHundredLeap + ".\n", twenty, oneHundred, fourHundred);
     
         
